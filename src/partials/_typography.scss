@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Fire Sans";
+  src: url("/assets/fonts/FireSans-Light.woff") format("woff"),
+    url("/assets/font/FireSans-Light.woff2") format("woff2"),
+    url("/assets/font/FireSans-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "Fire Sans";
+  src: url("/assets/fonts/FireSans-Regular.woff") format("woff"),
+    url("/assets/font/FireSans-Regular.woff2") format("woff2"),
+    url("/assets/font/FireSans-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fire Sans";
+  src: url("/assets/fonts/FireSans-SemiBold.woff") format("woff"),
+    url("/assets/font/FireSans-SemiBold.woff2") format("woff2"),
+    url("/assets/font/FireSans-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Fire Sans";
+  src: url("/assets/fonts/FireSans-Bold.woff") format("woff"),
+    url("/assets/font/FireSans-Bold.woff2") format("woff2"),
+    url("/assets/font/FireSans-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: bold;
+}
