@@ -8,20 +8,24 @@ const ColorPalette = () => {
   const [keyword, setKeyword] = useState("");
 
   const handleChange = (e) => {
-    setKeyword(e.target.name.value);
+    console.log(e.target.value);
+    setKeyword(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8080/palettes", keyword);
-  };
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/palettes").then((response) => {
+    axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
       setColorPalette(response.data);
       console.log(response.data);
     });
-  }, []);
+  };
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:8080/palettes").then((response) => {
+  //     setColorPalette(response.data);
+  //     console.log(response.data);
+  //   });
+  // }, []);
 
   const ColorCard = styled.div`
     width: 8rem;
