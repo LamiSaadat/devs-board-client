@@ -1,5 +1,14 @@
 @use "../../partials/variables";
+@use "../../partials/mixins";
 
 .palette {
   display: flex;
+  justify-content: center;
+  margin: 3rem 0 0 0;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    // @include subheader-desktop-font;
+  }
 }

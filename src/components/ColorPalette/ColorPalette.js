@@ -24,9 +24,8 @@ const ColorPalette = () => {
   }, []);
 
   const ColorCard = styled.div`
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 2rem;
+    width: 8rem;
+    height: 8rem;
   `;
 
   return (
@@ -47,17 +46,18 @@ const ColorPalette = () => {
         <div className="palette">
           {colorPalette.map((color) => {
             return (
-              <ColorCard
-                key={color.color.clean}
-                style={{
-                  backgroundColor: `${color.color.value}`,
-                }}
-              ></ColorCard>
+              <div className="palette_card">
+                <ColorCard
+                  key={color.color.clean}
+                  style={{
+                    backgroundColor: `${color.color.value}`,
+                  }}
+                ></ColorCard>
+                <span>{color.color.value}</span>
+              </div>
             );
           })}
         </div>
-
-        <button>Click me</button>
       </div>
     </>
   );
