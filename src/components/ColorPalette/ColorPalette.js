@@ -41,7 +41,7 @@ const ColorPalette = () => {
             <input
               type="text"
               className="keyword-input"
-              name="inputKeyword"
+              name="keyword"
               onChange={handleChange}
             />
           </label>

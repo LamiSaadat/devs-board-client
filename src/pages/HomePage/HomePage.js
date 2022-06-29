@@ -1,21 +1,29 @@
 import "./HomePage.scss";
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react";
 
 function HomePage() {
+  const [boardName, setBoardName] = useState("");
   const [keyword, setKeyword] = useState("");
+  const history = useHistory();
 
-  const handleChange = (e) => {
-    setKeyword(e.target.value);
+  const handleBoardNameChange = (e) => {
+    setBoardName(e.target.value);
+    console.log("board name changed: ", e.target.value);
   };
 
-  function handleSubmit(e) {
+  const handleKeywordChange = (e) => {
+    setKeyword(e.target.value);
+    console.log("keyword changed: ", e.target.value);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
-      console.log(response.data);
-    });
-  }
+    history.push("/board", { boardName, keyword });
+    console.log(boardName, keyword);
+  };
 
   return (
     <div className="container col-xl-10 col-xxl-8 px-4 py-5">
@@ -31,10 +39,12 @@ function HomePage() {
           >
             <div className="form-floating mb-3">
               <input
-                type="email"
+                type="text"
                 className="form-control"
                 id="floatingInput"
                 name="boardName"
+                value={boardName}
+                onChange={handleBoardNameChange}
                 placeholder="Enter board name..."
               />
               <label for="floatingInput">Board Name</label>
@@ -44,8 +54,9 @@ function HomePage() {
                 type="text"
                 className="form-control"
                 id="floatingPassword"
-                name="inputKeyword"
-                onChange={handleChange}
+                name="keyword"
+                value={keyword}
+                onChange={handleKeywordChange}
                 placeholder="Enter keyword..."
               />
               <label for="floatingPassword">Keyword</label>
