@@ -8,6 +8,7 @@ import BoardPage from "./pages/BoardPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 //Boostrap JS
 import "bootstrap";
+import ColorPalette from "./components/ColorPalette/ColorPalette";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={HomePage}></Route>
+        <Route path="/board/:id" component={ColorPalette}></Route>
         <Route path="/board" component={BoardPage}></Route>
       </Switch>
     </Router>
