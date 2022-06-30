@@ -11,7 +11,7 @@ function BoardPage() {
       <Switch>
         <Route path="/board/create" component={BoardCreator}></Route>
         <Route path="/board/gallery" component={BoardsGallery}></Route>
-        <Route path="/board" component={Board}></Route>
+        <Route path="/board/:id" component={Board}></Route>
       </Switch>
     </Router>
   );
