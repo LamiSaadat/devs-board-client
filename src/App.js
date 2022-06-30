@@ -16,7 +16,6 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={HomePage}></Route>
-        <Route path="/board/:id" component={ColorPalette}></Route>
         <Route path="/board" component={BoardPage}></Route>
       </Switch>
     </Router>
