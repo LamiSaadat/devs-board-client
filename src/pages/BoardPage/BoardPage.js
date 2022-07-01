@@ -11,7 +11,6 @@ function BoardPage() {
 
   useEffect(() => {
     axios.get("http://localhost:8080/boards").then((response) => {
-      console.log(response.data);
       setBoards(response.data);
     });
   }, []);
