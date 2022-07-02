@@ -56,11 +56,28 @@ function BoardCreator() {
           board_id: boardId,
         };
         console.log(newColorPalette);
-        axios
-          .post(`http://localhost:8080/palettes`, newColorPalette)
-          .then((response) => {
-            history.push("/board/gallery");
-          });
+
+        let newImages = {
+          image1: images[0].src.small,
+          image2: images[1].src.small,
+          image3: images[2].src.small,
+          image4: images[3].src.small,
+          image5: images[4].src.small,
+          image6: images[5].src.small,
+          image7: images[6].src.small,
+          image8: images[7].src.small,
+          image9: images[8].src.small,
+          image10: images[9].src.small,
+          board_id: boardId,
+        };
+        console.log(newImages);
+
+        Promise.all([
+          axios.post(`http://localhost:8080/palettes`, newColorPalette),
+          axios.post(`http://localhost:8080/images`, newImages),
+        ]).then(() => {
+          history.push("/board/gallery");
+        });
       });
   };
   return (
