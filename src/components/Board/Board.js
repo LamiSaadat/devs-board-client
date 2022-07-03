@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Board.scss";
@@ -24,9 +24,20 @@ function Board({ boards }) {
   }, []);
 
   return (
-    <section>
-      <h1>{singleBoard.name}</h1>
+    <section className="selected-board">
+      <h1 className="selected-board__title">{singleBoard.name}</h1>
       {/* <ColorPalette colorPalette={boardColorPalette} /> */}
+      <div className="selected-board__btn-container">
+        <Link
+          to="/board/gallery"
+          className="selected-board__btn selected-board__btn--close"
+        >
+          Close
+        </Link>
+        <button className="selected-board__btn" type="submit">
+          Edit
+        </button>
+      </div>
     </section>
   );
 }
