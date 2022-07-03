@@ -16,6 +16,13 @@ function Board({ boards }) {
     });
   }, []);
 
+  useEffect(() => {
+    axios.get(`http://localhost:8080/boards/${id}/images`).then((response) => {
+      console.log(response.data);
+      // setBoardColorPalette(response.data);
+    });
+  }, []);
+
   return (
     <section>
       <h1>{singleBoard.name}</h1>
