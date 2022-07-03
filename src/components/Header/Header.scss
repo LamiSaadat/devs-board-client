@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  &__title {
+    @include section-header-desktop-font;
+    color: $dark-brown !important;
+    margin-left: 2rem;
+  }
+
+  &__item--active {
+    background-color: $misty-rose;
+    border-radius: 5rem;
+  }
+
+  &__item-link {
+    color: $dark-brown !important;
+    @include subheader-desktop-font;
+    font-size: 1rem;
+  }
+}
