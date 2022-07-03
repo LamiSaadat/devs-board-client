@@ -81,14 +81,16 @@ function BoardCreator() {
       });
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <p>{boardName}</p>
+    <div className="create-form-container">
+      <form className="create-form" onSubmit={handleSubmit}>
+        <p className="create-form__title">{boardName}</p>
         <ColorPalette colorPalette={colorPalette} />
         <Images images={images}></Images>
-        <button type="submit">Save</button>
+        <button className="create-form__btn" type="submit">
+          Save
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 
