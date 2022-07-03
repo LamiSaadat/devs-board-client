@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import ColorPalette from "../ColorPalette/ColorPalette";
 import "./BoardCreator.scss";
@@ -86,9 +86,14 @@ function BoardCreator() {
         <p className="create-form__title">{boardName}</p>
         <ColorPalette colorPalette={colorPalette} />
         <Images images={images}></Images>
-        <button className="create-form__btn" type="submit">
-          Save
-        </button>
+        <div className="create-form__btn-container">
+          <Link to="/" className="create-form__btn create-form__btn--cancel">
+            Cancel
+          </Link>
+          <button className="create-form__btn" type="submit">
+            Save
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -16,6 +16,12 @@
     @include page-header-desktop-font;
     color: $dark-brown;
     padding-left: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__btn-container {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__btn {
@@ -27,7 +33,19 @@
     @include labels-button-desktop-font;
     font-size: 1rem;
     padding: 0.5rem 0;
-    align-self: flex-end;
+    // align-self: flex-end;
     margin-right: 2rem;
+
+    &--cancel {
+      text-align: center;
+      text-decoration: none;
+      background-color: $white;
+      border: 1px solid $misty-rose;
+      margin-right: 1rem;
+
+      &:hover {
+        color: $dark-brown;
+      }
+    }
   }
 }
