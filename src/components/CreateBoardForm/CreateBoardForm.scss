@@ -1,0 +1,16 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form-container {
+  margin-top: 10rem;
+}
+.form {
+  font-family: "Fira Sans";
+
+  &__btn {
+    background-color: $misty-rose !important;
+    color: $dark-brown !important;
+    border-color: $misty-rose !important;
+    border-radius: 10rem !important;
+  }
+}
