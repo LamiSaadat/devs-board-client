@@ -2,31 +2,38 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Board.scss";
-import ColorPalette from "../ColorPalette/ColorPalette";
+import BoardColorPalette from "../BoardColorPalette/BoardColorPalette";
+import BoardImages from "../BoardImages/BoardImages";
 
 function Board({ boards }) {
   const { id } = useParams();
-  const { boardColorPalette, setBoardColorPalette } = useState([]);
+  const [boardColorPalette, setBoardColorPalette] = useState([]);
+  const [boardImages, setBoardImages] = useState([]);
   const singleBoard = boards.find((board) => String(board.id) === id) || {};
+
+  console.log(id);
 
   useEffect(() => {
     axios.get(`http://localhost:8080/boards/${id}/palette`).then((response) => {
       console.log(response.data);
-      // setBoardColorPalette(response.data);
+      setBoardColorPalette(response.data);
     });
   }, []);
 
   useEffect(() => {
     axios.get(`http://localhost:8080/boards/${id}/images`).then((response) => {
       console.log(response.data);
-      // setBoardColorPalette(response.data);
+      setBoardImages(response.data);
     });
   }, []);
 
   return (
     <section className="selected-board">
       <h1 className="selected-board__title">{singleBoard.name}</h1>
-      {/* <ColorPalette colorPalette={boardColorPalette} /> */}
+
+      <BoardColorPalette boardColorPalette={boardColorPalette} />
+      <BoardImages boardImages={boardImages} />
+
       <div className="selected-board__btn-container">
         <Link
           to="/board/gallery"
