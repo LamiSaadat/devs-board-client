@@ -81,7 +81,7 @@ function BoardCreator() {
       });
   };
   return (
-    <div className="create-form-container">
+    <section className="create-form-container">
       <form className="create-form" onSubmit={handleSubmit}>
         <p className="create-form__title">{boardName}</p>
         <ColorPalette colorPalette={colorPalette} />
@@ -95,7 +95,7 @@ function BoardCreator() {
           </button>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
 
