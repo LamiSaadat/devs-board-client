@@ -9,14 +9,14 @@
     margin-left: 2rem;
   }
 
-  &__item--active {
-    background-color: $misty-rose;
-    border-radius: 5rem;
-  }
-
   &__item-link {
     color: $dark-brown !important;
     @include subheader-desktop-font;
     font-size: 1rem;
   }
+}
+
+.active {
+  background-color: $misty-rose !important;
+  border-radius: 5rem;
 }
