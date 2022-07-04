@@ -7,8 +7,8 @@ import BoardImages from "../BoardImages/BoardImages";
 
 function Board({ boards }) {
   const { id } = useParams();
-  const [boardColorPalette, setBoardColorPalette] = useState([]);
-  const [boardImages, setBoardImages] = useState([]);
+  const [boardColorPalette, setBoardColorPalette] = useState(null);
+  const [boardImages, setBoardImages] = useState(null);
   const singleBoard = boards.find((board) => String(board.id) === id) || {};
 
   console.log(id);
@@ -31,8 +31,10 @@ function Board({ boards }) {
     <section className="selected-board">
       <h1 className="selected-board__title">{singleBoard.name}</h1>
 
-      <BoardColorPalette boardColorPalette={boardColorPalette} />
-      <BoardImages boardImages={boardImages} />
+      {boardColorPalette && (
+        <BoardColorPalette boardColorPalette={boardColorPalette} />
+      )}
+      {boardImages && <BoardImages boardImages={boardImages} />}
 
       <div className="selected-board__btn-container">
         <Link

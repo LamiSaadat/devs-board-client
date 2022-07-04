@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 function BoardColorPalette({ boardColorPalette }) {
-  console.log(boardColorPalette);
   const ColorCard = styled.div`
     width: 8rem;
     height: 8rem;
