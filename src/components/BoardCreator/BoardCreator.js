@@ -97,7 +97,7 @@ function BoardCreator() {
   return (
     <section className="create-form-container">
       <form className="create-form" onSubmit={handleSubmit}>
-        <p className="create-form__title">{boardName}</p>
+        <h1 className="create-form__title">{boardName}</h1>
         <ColorPalette colorPalette={colorPalette} onTileClick={onTileClick} />
         <Images images={images}></Images>
         <div className="create-form__btn-container">

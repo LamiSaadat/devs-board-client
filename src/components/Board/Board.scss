@@ -7,10 +7,11 @@
   justify-content: space-around;
   border: 1px solid #dee2e6;
   border-radius: 0.3rem;
-  height: 100vh;
+  height: 80vh;
   font-family: "Fira Sans";
   background-color: #f7f8f9;
   margin: 0 10rem;
+  padding: 0.8rem;
 
   &__title {
     @include page-header-desktop-font;
@@ -33,7 +34,6 @@
     @include labels-button-desktop-font;
     font-size: 1rem;
     padding: 0.5rem 0;
-    // align-self: flex-end;
     margin-right: 2rem;
 
     &--close {
