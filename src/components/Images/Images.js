@@ -15,7 +15,15 @@ function Images({ images }) {
         columnClassName="masonry-grid_column"
       >
         {images.map((image) => {
-          return <img className="images__image" src={image.src.large} />;
+          return (
+            <a href={image.src.landscape} target="_blank" key={image.id}>
+              <img
+                className="images__image"
+                src={image.src.landscape}
+                alt={`Photo by ${image.photographer} on Pexels.`}
+              />
+            </a>
+          );
         })}
       </Masonry>
     </div>

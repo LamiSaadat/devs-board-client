@@ -1,6 +1,6 @@
 import React from "react";
-import "./BoardImages.scss";
 import Masonry from "react-masonry-css";
+import "./BoardImages.scss";
 
 function BoardImages({ boardImages }) {
   const breakpointColumnsObj = {
@@ -8,31 +8,42 @@ function BoardImages({ boardImages }) {
   };
 
   return (
-    <div className="board-images">
+    <div className="images">
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="masonry-grid"
         columnClassName="masonry-grid_column"
       >
-        <img className="board-images__image" src={boardImages[0].image1} />
-
-        <img className="board-images__image" src={boardImages[0].image2} />
-
-        <img className="board-images__image" src={boardImages[0].image3} />
-
-        <img className="board-images__image" src={boardImages[0].image4} />
-
-        <img className="board-images__image" src={boardImages[0].image5} />
-
-        <img className="board-images__image" src={boardImages[0].image6} />
-
-        <img className="board-images__image" src={boardImages[0].image7} />
-
-        <img className="board-images__image" src={boardImages[0].image8} />
-
-        <img className="board-images__image" src={boardImages[0].image9} />
-
-        <img className="board-images__image" src={boardImages[0].image10} />
+        <a href={boardImages[0].image1} target="_blank">
+          <img className="images__image" src={boardImages[0].image1} />
+        </a>
+        <a href={boardImages[0].image2} target="_blank">
+          <img className="images__image" src={boardImages[0].image2} />
+        </a>
+        <a href={boardImages[0].image3} target="_blank">
+          <img className="images__image" src={boardImages[0].image3} />
+        </a>
+        <a href={boardImages[0].image4} target="_blank">
+          <img className="images__image" src={boardImages[0].image4} />
+        </a>
+        <a href={boardImages[0].image5} target="_blank">
+          <img className="images__image" src={boardImages[0].image5} />
+        </a>
+        <a href={boardImages[0].image6} target="_blank">
+          <img className="images__image" src={boardImages[0].image6} />
+        </a>
+        <a href={boardImages[0].image7} target="_blank">
+          <img className="images__image" src={boardImages[0].image7} />
+        </a>
+        <a href={boardImages[0].image8} target="_blank">
+          <img className="images__image" src={boardImages[0].image8} />
+        </a>
+        <a href={boardImages[0].image9} target="_blank">
+          <img className="images__image" src={boardImages[0].image9} />
+        </a>
+        <a href={boardImages[0].image10} target="_blank">
+          <img className="images__image" src={boardImages[0].image10} />
+        </a>
       </Masonry>
     </div>
   );
