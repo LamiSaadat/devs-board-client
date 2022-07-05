@@ -12,6 +12,7 @@ function BoardCreator() {
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
   const [images, setImages] = useState([]);
+  const [activeColor, setActiveColor] = useState();
 
   useEffect(() => {
     axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
@@ -19,6 +20,17 @@ function BoardCreator() {
       console.log(response.data);
     });
   }, []);
+
+  const onTileClick = async (color) => {
+    setActiveColor(color);
+    console.log(color);
+
+    try {
+      await navigator.clipboard.writeText(color);
+    } catch (e) {
+      console.log(`${e} - this action is not supported`);
+    }
+  };
 
   useEffect(() => {
     const url = `https://api.pexels.com/v1/search?query=${keyword}&per_page=10`;
@@ -86,7 +98,7 @@ function BoardCreator() {
     <section className="create-form-container">
       <form className="create-form" onSubmit={handleSubmit}>
         <p className="create-form__title">{boardName}</p>
-        <ColorPalette colorPalette={colorPalette} />
+        <ColorPalette colorPalette={colorPalette} onTileClick={onTileClick} />
         <Images images={images}></Images>
         <div className="create-form__btn-container">
           <Link to="/" className="create-form__btn create-form__btn--cancel">

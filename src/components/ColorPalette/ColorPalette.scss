@@ -11,4 +11,9 @@
     flex-direction: column;
     // @include subheader-desktop-font;
   }
+
+  &__copy {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
 }
