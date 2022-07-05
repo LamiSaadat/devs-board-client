@@ -13,6 +13,7 @@ function Board({ boards }) {
   const [boardColorPalette, setBoardColorPalette] = useState(null);
   const [boardImages, setBoardImages] = useState(null);
   const [showModal, setShowModal] = useState("false");
+  const [activeColor, setActiveColor] = useState();
 
   const singleBoard = boards.find((board) => String(board.id) === id) || {};
 
@@ -26,6 +27,17 @@ function Board({ boards }) {
 
   const handleClose = () => {
     setShowModal(!showModal);
+  };
+
+  const onTileClick = async (color) => {
+    setActiveColor(color);
+    console.log(color);
+
+    try {
+      await navigator.clipboard.writeText(color);
+    } catch (e) {
+      console.log(`${e} - this action is not supported`);
+    }
   };
 
   useEffect(() => {
@@ -57,7 +69,10 @@ function Board({ boards }) {
         <h1 className="selected-board__title">{singleBoard.name}</h1>
 
         {boardColorPalette && (
-          <BoardColorPalette boardColorPalette={boardColorPalette} />
+          <BoardColorPalette
+            boardColorPalette={boardColorPalette}
+            onTileClick={onTileClick}
+          />
         )}
         {boardImages && <BoardImages boardImages={boardImages} />}
 

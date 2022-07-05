@@ -4,12 +4,29 @@
 .palette {
   display: flex;
   justify-content: center;
-  margin: 3rem 0 0 0;
+  margin: 1rem 0;
 
   &__card {
     display: flex;
     flex-direction: column;
     // @include subheader-desktop-font;
+  }
+
+  &__card:hover {
+    cursor: pointer;
+  }
+
+  &__swatch {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-around;
+    // border: 0.5px solid black;
+    // border-radius: 5px;
   }
 
   &__copy {
