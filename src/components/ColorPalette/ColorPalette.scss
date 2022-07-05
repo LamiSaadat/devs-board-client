@@ -6,31 +6,34 @@
   justify-content: center;
   margin: 1rem 0;
 
-  &__card {
-    display: flex;
-    flex-direction: column;
-    // @include subheader-desktop-font;
-  }
-
-  &__card:hover {
-    cursor: pointer;
-  }
-
   &__swatch {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-  }
-  &__info {
-    display: flex;
-    justify-content: space-around;
-    // border: 0.5px solid black;
-    // border-radius: 5px;
+    justify-content: center;
+    align-items: center;
   }
 
-  &__copy {
-    height: 1.3rem;
-    width: 1.3rem;
+  &__swatch:hover {
+    cursor: pointer;
+  }
+
+  &__info {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &__info:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    border-radius: 5px;
   }
 }
