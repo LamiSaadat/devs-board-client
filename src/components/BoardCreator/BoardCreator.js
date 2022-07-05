@@ -8,10 +8,10 @@ import Images from "../Images/Images";
 function BoardCreator() {
   const location = useLocation();
   const history = useHistory();
+
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
   const [images, setImages] = useState([]);
-  // const [isSaved, setIsSaved] = useState("false");
 
   useEffect(() => {
     axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
@@ -79,7 +79,6 @@ function BoardCreator() {
         ]).then(() => {
           history.push("/board/gallery");
           window.location.reload(false);
-          // setIsSaved("true");
         });
       });
   };
