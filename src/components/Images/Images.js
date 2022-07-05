@@ -1,18 +1,31 @@
 import React from "react";
 import "./Images.scss";
+import Masonry from "react-masonry-css";
 
 function Images({ images }) {
+  const breakpointColumnsObj = {
+    default: 5,
+  };
+
   return (
     <div className="images">
-      <ul className="images__list">
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid"
+        columnClassName="masonry-grid_column"
+      >
         {images.map((image) => {
           return (
-            <li className="images__list-item">
-              <img className="images__image" src={image.src.large} />
-            </li>
+            <a href={image.src.landscape} target="_blank" key={image.id}>
+              <img
+                className="images__image"
+                src={image.src.landscape}
+                alt={`Photo by ${image.photographer} on Pexels.`}
+              />
+            </a>
           );
         })}
-      </ul>
+      </Masonry>
     </div>
   );
 }

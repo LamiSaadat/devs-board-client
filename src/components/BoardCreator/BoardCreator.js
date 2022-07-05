@@ -71,16 +71,16 @@ function BoardCreator() {
         console.log(newColorPalette);
 
         let newImages = {
-          image1: images[0].src.small,
-          image2: images[1].src.small,
-          image3: images[2].src.small,
-          image4: images[3].src.small,
-          image5: images[4].src.small,
-          image6: images[5].src.small,
-          image7: images[6].src.small,
-          image8: images[7].src.small,
-          image9: images[8].src.small,
-          image10: images[9].src.small,
+          image1: images[0].src.landscape,
+          image2: images[1].src.landscape,
+          image3: images[2].src.landscape,
+          image4: images[3].src.landscape,
+          image5: images[4].src.landscape,
+          image6: images[5].src.landscape,
+          image7: images[6].src.landscape,
+          image8: images[7].src.landscape,
+          image9: images[8].src.landscape,
+          image10: images[9].src.landscape,
           board_id: boardId,
         };
         console.log(newImages);
