@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import ColorPicker from "../ColorPicker";
 
 const ColorPalette = ({ colorPalette }) => {
   const ColorCard = styled.div`
@@ -22,7 +23,10 @@ const ColorPalette = ({ colorPalette }) => {
                   style={{
                     backgroundColor: `${color.color.value}`,
                   }}
-                ></ColorCard>
+                >
+                  <ColorPicker />
+                </ColorCard>
+
                 <span>{color.color.value}</span>
               </div>
             );

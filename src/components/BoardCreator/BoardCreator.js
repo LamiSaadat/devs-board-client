@@ -8,16 +8,35 @@ import Images from "../Images/Images";
 function BoardCreator() {
   const location = useLocation();
   const history = useHistory();
+
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
   const [images, setImages] = useState([]);
-  // const [isSaved, setIsSaved] = useState("false");
+  const [showPicker, setShowPicker] = useState(false);
+  const [newColor, setNewColor] = useState("");
 
+  // const handleClick = () => {
+  //   setShowPicker(!showPicker);
+  // };
+
+  // const handleChangeComplete = () => {
+  //   setNewColor(newColor.hex);
+  // };
+  const handleClick = () => {};
   useEffect(() => {
-    axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
-      setColorPalette(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get(`http://localhost:8080/palettes/${keyword}`)
+      .then((response) => {
+        setColorPalette(response.data);
+        return response.data;
+      })
+      .then((response) => {
+        console.log(response);
+        //for each color
+        response.forEach((color) => {});
+        //if color changes, update state
+        //else keep generated color
+      });
   }, []);
 
   useEffect(() => {
@@ -79,7 +98,6 @@ function BoardCreator() {
         ]).then(() => {
           history.push("/board/gallery");
           window.location.reload(false);
-          // setIsSaved("true");
         });
       });
   };
