@@ -5,14 +5,13 @@ import ColorPalette from "../ColorPalette/ColorPalette";
 import "./BoardCreator.scss";
 import Images from "../Images/Images";
 
-function BoardCreator() {
+function BoardCreator({ onTileClick }) {
   const location = useLocation();
   const history = useHistory();
 
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
   const [images, setImages] = useState([]);
-  const [activeColor, setActiveColor] = useState();
 
   useEffect(() => {
     axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
@@ -20,17 +19,6 @@ function BoardCreator() {
       console.log(response.data);
     });
   }, []);
-
-  const onTileClick = async (color) => {
-    setActiveColor(color);
-    console.log(color);
-
-    try {
-      await navigator.clipboard.writeText(color);
-    } catch (e) {
-      console.log(`${e} - this action is not supported`);
-    }
-  };
 
   useEffect(() => {
     const url = `https://api.pexels.com/v1/search?query=${keyword}&per_page=10`;

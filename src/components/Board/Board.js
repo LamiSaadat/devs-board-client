@@ -6,7 +6,7 @@ import BoardColorPalette from "../BoardColorPalette/BoardColorPalette";
 import BoardImages from "../BoardImages/BoardImages";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
-function Board({ boards }) {
+function Board({ boards, onTileClick }) {
   const { id } = useParams();
   const history = useHistory();
 
@@ -57,7 +57,10 @@ function Board({ boards }) {
         <h1 className="selected-board__title">{singleBoard.name}</h1>
 
         {boardColorPalette && (
-          <BoardColorPalette boardColorPalette={boardColorPalette} />
+          <BoardColorPalette
+            boardColorPalette={boardColorPalette}
+            onTileClick={onTileClick}
+          />
         )}
         {boardImages && <BoardImages boardImages={boardImages} />}
 
