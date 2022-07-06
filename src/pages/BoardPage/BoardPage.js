@@ -8,7 +8,6 @@ import BoardsGallery from "../../components/BoardsGallery";
 
 function BoardPage() {
   const [boards, setBoards] = useState([]);
-  const [activeColor, setActiveColor] = useState();
 
   const base_URL = process.env.REACT_APP_API_URL;
 
@@ -23,16 +22,6 @@ function BoardPage() {
       });
   }, []);
 
-  const onTileClick = async (color) => {
-    setActiveColor(color);
-
-    try {
-      await navigator.clipboard.writeText(color);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <Router>
       <Switch>
@@ -46,13 +35,7 @@ function BoardPage() {
         <Route
           path="/board/:id"
           render={(routerProps) => {
-            return (
-              <Board
-                boards={boards}
-                onTileClick={onTileClick}
-                {...routerProps}
-              />
-            );
+            return <Board boards={boards} {...routerProps} />;
           }}
         ></Route>
       </Switch>

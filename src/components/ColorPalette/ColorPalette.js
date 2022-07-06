@@ -1,12 +1,12 @@
 import "./ColorPalette.scss";
 import styled from "styled-components";
 
-const ColorPalette = ({ colorPalette }) => {
-  const ColorCard = styled.div`
-    width: 8rem;
-    height: 8rem;
-  `;
+const ColorCard = styled.div`
+  width: 8rem;
+  height: 8rem;
+`;
 
+const ColorPalette = ({ colorPalette }) => {
   return (
     <>
       <div>
