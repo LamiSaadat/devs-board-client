@@ -19,7 +19,6 @@ function DeleteModal({ handleDeleteClick, isOpen, onClose }) {
         <ModalHeader>Delete board?</ModalHeader>
         <ModalCloseButton />
         <ModalBody>Are you sure you want to delete this board?</ModalBody>
-
         <ModalFooter>
           <Button
             colorScheme="blue"
@@ -47,35 +46,6 @@ function DeleteModal({ handleDeleteClick, isOpen, onClose }) {
         </ModalFooter>
       </ModalContent>
     </Modal>
-
-    // <div className="delete-modal">
-    //   <div className="delete-modal__information">
-    //     <img
-    //       src={close}
-    //       alt="close"
-    //       className="delete-modal__close"
-    //       onClick={handleClose}
-    //     />
-    //     <h1 className="delete-modal__title">Delete Board?</h1>
-    //     <p className="delete-modal__description">
-    //       Are you sure you want to delete this board?
-    //     </p>
-    //     <div className="buttons delete-modal__buttons">
-    //       <button
-    //         className="button delete-modal__buttons--cancel"
-    //         onClick={handleClose}
-    //       >
-    //         Cancel
-    //       </button>
-    //       <button
-    //         className="button delete-modal__buttons--delete"
-    //         onClick={handleDeleteClick}
-    //       >
-    //         Delete
-    //       </button>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 

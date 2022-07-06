@@ -37,7 +37,6 @@ function BoardColorPalette({ boardColorPalette, onTileClick }) {
             {boardColorPalette[0].color2}
           </div>
         </ColorCard>
-
         <ColorCard
           style={{
             backgroundColor: `${boardColorPalette[0].color3}`,
@@ -52,7 +51,6 @@ function BoardColorPalette({ boardColorPalette, onTileClick }) {
             {boardColorPalette[0].color3}
           </div>
         </ColorCard>
-
         <ColorCard
           style={{
             backgroundColor: `${boardColorPalette[0].color4}`,
