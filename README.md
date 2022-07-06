@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Dev's Board
+***Dev's Board is the app that makes a developer's life a teensy bit easier!***
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my capstone project for BrainStation's full-stack bootcamp. The task was to ideate, plan, and execute a full-stack application within two weeks. Dev's Board was made using React, React Router, and SASS for the front end, a Node/Express backend API, and Knex to query a MySQL database. 
 
-## Available Scripts
+## :running: Run Locally
 
-In the project directory, you can run:
+Follow these steps to run a local instance of Dev's Board. You will also need to install the [backend](https://github.com/LamiSaadat/devs-board-server):  
+(You'll need node and npm already installed.)
 
-### `npm start`
+<!-- Run Locally -->
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+  git clone https://github.com/LamiSaadat/devs-board-client.git
+```
 
-### `npm test`
+2. Go to the project directory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  cd devs-board-client
+```
 
-### `npm run build`
+3. Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
+4. Set environment variables:  
+   
+Rename `.env_sample` to `.env` and change the placeholder value to the port you set for the server.
+```shell
+REACT_APP_API_KEY=<your API key from pexels.com/api>
+REACT_APP_API_URL=http://localhost:<PORT SET IN /devs-board-server/.env>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Start the app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npm start
+```
 
-### `npm run eject`
+<!-- TechStack -->
+## :space_invader: Tech Stack
+- React.js
+- React Router
+- SASS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- Roadmap -->
+## :compass: Roadmap
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [ ] User Sign Up/Login
+* [ ] Color Changer
+* [ ] Update board
+* [ ] Add notes
+* [ ] Share boards
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- Contact -->
+## :handshake: Contact
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lamisaadat/)
 
-## Learn More
+<!-- Acknowledgments -->
+## :gem: Acknowledgements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - [Bootstrap](https://getbootstrap.com/)
+ - [Chakra](https://chakra-ui.com/)
+ - [Styled Components](https://styled-components.com/)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
