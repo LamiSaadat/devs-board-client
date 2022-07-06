@@ -13,9 +13,14 @@ function BoardPage() {
   const base_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios.get(`${base_URL}/boards`).then((response) => {
-      setBoards(response.data);
-    });
+    axios
+      .get(`${base_URL}/boards`)
+      .then((response) => {
+        setBoards(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const onTileClick = async (color) => {
@@ -23,8 +28,8 @@ function BoardPage() {
 
     try {
       await navigator.clipboard.writeText(color);
-    } catch (e) {
-      console.log(`${e} - this action is not supported`);
+    } catch (err) {
+      console.log(err);
     }
   };
 

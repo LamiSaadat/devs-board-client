@@ -5,7 +5,7 @@ import ColorPalette from "../ColorPalette/ColorPalette";
 import "./BoardCreator.scss";
 import Images from "../Images/Images";
 
-function BoardCreator({}) {
+function BoardCreator() {
   const location = useLocation();
   const history = useHistory();
   const API_key = process.env.REACT_APP_API_KEY;
@@ -33,6 +33,9 @@ function BoardCreator({}) {
       })
       .then((response) => {
         setImages(response.data.photos);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -78,6 +81,9 @@ function BoardCreator({}) {
           history.push("/board/gallery");
           window.location.reload(false);
         });
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (

@@ -27,25 +27,34 @@ function Board({ boards }) {
 
   //get color palette from existing board
   useEffect(() => {
-    axios.get(`${base_URL}/boards/${id}/palette`).then((response) => {
-      setBoardColorPalette(response.data);
-    });
-  }, []);
+    axios
+      .get(`${base_URL}/boards/${id}/palette`)
+      .then((response) => {
+        setBoardColorPalette(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
 
   //get images from existing board
   useEffect(() => {
-    axios.get(`${base_URL}/boards/${id}/images`).then((response) => {
-      setBoardImages(response.data);
-    });
-  }, []);
+    axios
+      .get(`${base_URL}/boards/${id}/images`)
+      .then((response) => {
+        setBoardImages(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
 
   //axios call to delete board
   const deleteBoard = async () => {
     try {
-      const response = await axios.delete(`${base_URL}/boards/${id}`);
-      console.log(response.status);
-    } catch (e) {
-      console.log("something went wrong!", e);
+      await axios.delete(`${base_URL}/boards/${id}`);
+    } catch (err) {
+      console.log(err);
     }
   };
 
