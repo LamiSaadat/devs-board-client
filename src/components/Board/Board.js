@@ -5,6 +5,7 @@ import "./Board.scss";
 import BoardColorPalette from "../BoardColorPalette/BoardColorPalette";
 import BoardImages from "../BoardImages/BoardImages";
 import DeleteModal from "../DeleteModal/DeleteModal";
+import { Button, useDisclosure } from "@chakra-ui/react";
 
 function Board({ boards, onTileClick }) {
   const { id } = useParams();
@@ -13,6 +14,7 @@ function Board({ boards, onTileClick }) {
   const [boardColorPalette, setBoardColorPalette] = useState(null);
   const [boardImages, setBoardImages] = useState(null);
   const [showModal, setShowModal] = useState("false");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const singleBoard = boards.find((board) => String(board.id) === id) || {};
 
@@ -22,10 +24,6 @@ function Board({ boards, onTileClick }) {
     deleteBoard();
     history.push("/board/gallery");
     window.location.reload(false);
-  };
-
-  const handleClose = () => {
-    setShowModal(!showModal);
   };
 
   useEffect(() => {
@@ -71,21 +69,20 @@ function Board({ boards, onTileClick }) {
           >
             Close
           </Link>
-          <button
-            className="selected-board__btn"
-            type="submit"
-            onClick={handleClose}
+          <Button
+            onClick={onOpen}
+            className="selected-board__btn selected-board__btn--delete"
           >
             Delete
-          </button>
+          </Button>
         </div>
       </section>
-      {!showModal && (
-        <DeleteModal
-          handleDeleteClick={handleDeleteClick}
-          handleClose={handleClose}
-        />
-      )}
+
+      <DeleteModal
+        handleDeleteClick={handleDeleteClick}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </>
   );
 }

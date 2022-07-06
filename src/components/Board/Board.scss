@@ -26,9 +26,8 @@
   }
 
   &__btn {
-    background-color: $misty-rose;
     color: $dark-brown;
-    border-radius: 10rem;
+    border-radius: 10rem !important;
     border: none;
     width: 6rem;
     @include labels-button-desktop-font;
@@ -46,6 +45,10 @@
       &:hover {
         color: $dark-brown;
       }
+    }
+
+    &--delete {
+      background-color: $misty-rose !important;
     }
   }
 }
