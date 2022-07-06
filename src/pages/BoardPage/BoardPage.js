@@ -9,9 +9,10 @@ import BoardsGallery from "../../components/BoardsGallery";
 function BoardPage() {
   const [boards, setBoards] = useState([]);
   const [activeColor, setActiveColor] = useState();
+  const base_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios.get("http://localhost:8080/boards").then((response) => {
+    axios.get(`${base_URL}/boards`).then((response) => {
       setBoards(response.data);
     });
   }, []);

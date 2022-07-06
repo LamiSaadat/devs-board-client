@@ -9,13 +9,15 @@ function BoardCreator({ onTileClick }) {
   const location = useLocation();
   const history = useHistory();
   const API_key = process.env.REACT_APP_API_KEY;
+  const base_URL = process.env.REACT_APP_API_URL;
+  console.log(base_URL);
 
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/palettes/${keyword}`).then((response) => {
+    axios.get(`${base_URL}/palettes/${keyword}`).then((response) => {
       setColorPalette(response.data);
       console.log(response.data);
     });
@@ -41,7 +43,7 @@ function BoardCreator({ onTileClick }) {
     let newBoard = { name: boardName };
 
     axios
-      .post("http://localhost:8080/boards", newBoard)
+      .post(`${base_URL}/boards`, newBoard)
       .then((response) => {
         console.log(response.data);
         console.log(response.data.id);
@@ -74,8 +76,8 @@ function BoardCreator({ onTileClick }) {
         console.log(newImages);
 
         Promise.all([
-          axios.post(`http://localhost:8080/palettes`, newColorPalette),
-          axios.post(`http://localhost:8080/images`, newImages),
+          axios.post(`${base_URL}/palettes`, newColorPalette),
+          axios.post(`${base_URL}/images`, newImages),
         ]).then(() => {
           history.push("/board/gallery");
           window.location.reload(false);

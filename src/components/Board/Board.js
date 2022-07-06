@@ -10,10 +10,10 @@ import { Button, useDisclosure } from "@chakra-ui/react";
 function Board({ boards, onTileClick }) {
   const { id } = useParams();
   const history = useHistory();
+  const base_URL = process.env.REACT_APP_API_URL;
 
   const [boardColorPalette, setBoardColorPalette] = useState(null);
   const [boardImages, setBoardImages] = useState(null);
-  const [showModal, setShowModal] = useState("false");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const singleBoard = boards.find((board) => String(board.id) === id) || {};
@@ -27,14 +27,14 @@ function Board({ boards, onTileClick }) {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/boards/${id}/palette`).then((response) => {
+    axios.get(`${base_URL}/boards/${id}/palette`).then((response) => {
       console.log(response.data);
       setBoardColorPalette(response.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/boards/${id}/images`).then((response) => {
+    axios.get(`${base_URL}/boards/${id}/images`).then((response) => {
       console.log(response.data);
       setBoardImages(response.data);
     });
@@ -42,7 +42,7 @@ function Board({ boards, onTileClick }) {
 
   const deleteBoard = async () => {
     try {
-      const response = await axios.delete(`http://localhost:8080/boards/${id}`);
+      const response = await axios.delete(`${base_URL}/boards/${id}`);
       console.log(response.status);
     } catch (e) {
       console.log("something went wrong!", e);
