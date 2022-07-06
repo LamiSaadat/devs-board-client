@@ -1,5 +1,4 @@
 import React from "react";
-import "./DeleteModal.scss";
 import {
   Modal,
   ModalOverlay,
@@ -13,6 +12,7 @@ import {
 
 function DeleteModal({ handleDeleteClick, isOpen, onClose }) {
   return (
+    //chakra delete modal
     <Modal isOpen={isOpen} onClose={onClose} className="delete-modal">
       <ModalOverlay />
       <ModalContent>

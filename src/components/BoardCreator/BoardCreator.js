@@ -10,19 +10,19 @@ function BoardCreator({}) {
   const history = useHistory();
   const API_key = process.env.REACT_APP_API_KEY;
   const base_URL = process.env.REACT_APP_API_URL;
-  console.log(base_URL);
 
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
   const [images, setImages] = useState([]);
 
+  //get color palette by keyword
   useEffect(() => {
     axios.get(`${base_URL}/palettes/${keyword}`).then((response) => {
       setColorPalette(response.data);
-      console.log(response.data);
     });
   }, []);
 
+  //get images by keyword
   useEffect(() => {
     const url = `https://api.pexels.com/v1/search?query=${keyword}&per_page=10`;
     axios
@@ -32,7 +32,6 @@ function BoardCreator({}) {
         },
       })
       .then((response) => {
-        console.log(response.data.photos);
         setImages(response.data.photos);
       });
   }, []);
@@ -45,8 +44,6 @@ function BoardCreator({}) {
     axios
       .post(`${base_URL}/boards`, newBoard)
       .then((response) => {
-        console.log(response.data);
-        console.log(response.data.id);
         return response.data.id;
       })
       .then((boardId) => {
@@ -58,7 +55,6 @@ function BoardCreator({}) {
           color5: colorPalette[4].color.value,
           board_id: boardId,
         };
-        console.log(newColorPalette);
 
         let newImages = {
           image1: images[0].src.landscape,
@@ -73,8 +69,8 @@ function BoardCreator({}) {
           image10: images[9].src.landscape,
           board_id: boardId,
         };
-        console.log(newImages);
 
+        //add color palette and images to board
         Promise.all([
           axios.post(`${base_URL}/palettes`, newColorPalette),
           axios.post(`${base_URL}/images`, newImages),

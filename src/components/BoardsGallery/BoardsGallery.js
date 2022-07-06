@@ -9,7 +9,7 @@ function BoardsGallery({ boards }) {
       <div className="board-gallery">
         {boards.map((board) => {
           return (
-            <Link to={`/board/${board.id}`} className="board">
+            <Link to={`/board/${board.id}`} className="board" key={board.id}>
               <p className="board__name">{board.name}</p>
             </Link>
           );

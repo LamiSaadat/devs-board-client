@@ -20,7 +20,6 @@ function BoardPage() {
 
   const onTileClick = async (color) => {
     setActiveColor(color);
-    console.log(color);
 
     try {
       await navigator.clipboard.writeText(color);

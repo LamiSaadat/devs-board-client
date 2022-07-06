@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
+    //bootstrap header
     <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom header">
       <a
         href="/"

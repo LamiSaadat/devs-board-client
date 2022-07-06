@@ -18,28 +18,28 @@ function Board({ boards }) {
 
   const singleBoard = boards.find((board) => String(board.id) === id) || {};
 
-  console.log(id);
-
+  //handle board deletion
   const handleDeleteClick = () => {
     deleteBoard();
     history.push("/board/gallery");
     window.location.reload(false);
   };
 
+  //get color palette from existing board
   useEffect(() => {
     axios.get(`${base_URL}/boards/${id}/palette`).then((response) => {
-      console.log(response.data);
       setBoardColorPalette(response.data);
     });
   }, []);
 
+  //get images from existing board
   useEffect(() => {
     axios.get(`${base_URL}/boards/${id}/images`).then((response) => {
-      console.log(response.data);
       setBoardImages(response.data);
     });
   }, []);
 
+  //axios call to delete board
   const deleteBoard = async () => {
     try {
       const response = await axios.delete(`${base_URL}/boards/${id}`);

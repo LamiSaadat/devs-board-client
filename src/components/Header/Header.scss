@@ -3,6 +3,7 @@
 
 .header {
   font-family: "Fira Sans";
+
   &__title {
     @include section-header-desktop-font;
     color: $dark-brown !important;
