@@ -9,6 +9,7 @@ import BoardsGallery from "../../components/BoardsGallery";
 function BoardPage() {
   const [boards, setBoards] = useState([]);
   const [activeColor, setActiveColor] = useState();
+
   const base_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
@@ -31,11 +32,7 @@ function BoardPage() {
   return (
     <Router>
       <Switch>
-        <Route
-          path="/board/create"
-          component={BoardCreator}
-          onTileClick={onTileClick}
-        ></Route>
+        <Route path="/board/create" component={BoardCreator}></Route>
         <Route
           path="/board/gallery"
           render={(routerProps) => {

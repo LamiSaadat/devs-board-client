@@ -5,7 +5,7 @@ import ColorPalette from "../ColorPalette/ColorPalette";
 import "./BoardCreator.scss";
 import Images from "../Images/Images";
 
-function BoardCreator({ onTileClick }) {
+function BoardCreator({}) {
   const location = useLocation();
   const history = useHistory();
   const API_key = process.env.REACT_APP_API_KEY;
@@ -88,7 +88,7 @@ function BoardCreator({ onTileClick }) {
     <section className="create-form-container">
       <form className="create-form" onSubmit={handleSubmit}>
         <h1 className="create-form__title">{boardName}</h1>
-        <ColorPalette colorPalette={colorPalette} onTileClick={onTileClick} />
+        <ColorPalette colorPalette={colorPalette} />
         <Images images={images}></Images>
         <div className="create-form__btn-container">
           <Link to="/" className="create-form__btn create-form__btn--cancel">

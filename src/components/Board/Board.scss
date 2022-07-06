@@ -45,10 +45,18 @@
       &:hover {
         color: $dark-brown;
       }
+
+      &:active {
+        border: 3px solid #eed6d3;
+      }
     }
 
     &--delete {
       background-color: $misty-rose !important;
+
+      &:active {
+        background-color: #e2e8f0 !important;
+      }
     }
   }
 }

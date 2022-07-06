@@ -7,7 +7,7 @@ import BoardImages from "../BoardImages/BoardImages";
 import DeleteModal from "../DeleteModal/DeleteModal";
 import { Button, useDisclosure } from "@chakra-ui/react";
 
-function Board({ boards, onTileClick }) {
+function Board({ boards }) {
   const { id } = useParams();
   const history = useHistory();
   const base_URL = process.env.REACT_APP_API_URL;
@@ -55,10 +55,7 @@ function Board({ boards, onTileClick }) {
         <h1 className="selected-board__title">{singleBoard.name}</h1>
 
         {boardColorPalette && (
-          <BoardColorPalette
-            boardColorPalette={boardColorPalette}
-            onTileClick={onTileClick}
-          />
+          <BoardColorPalette boardColorPalette={boardColorPalette} />
         )}
         {boardImages && <BoardImages boardImages={boardImages} />}
 

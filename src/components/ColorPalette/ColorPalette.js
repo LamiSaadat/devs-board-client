@@ -1,7 +1,7 @@
 import "./ColorPalette.scss";
 import styled from "styled-components";
 
-const ColorPalette = ({ colorPalette, onTileClick }) => {
+const ColorPalette = ({ colorPalette }) => {
   const ColorCard = styled.div`
     width: 8rem;
     height: 8rem;
@@ -18,15 +18,9 @@ const ColorPalette = ({ colorPalette, onTileClick }) => {
                 style={{
                   backgroundColor: `${color.color.value}`,
                 }}
-                onClick={() => onTileClick(color.color.value)}
                 className="palette__swatch"
               >
-                <div
-                  className="palette__info"
-                  onClick={() => onTileClick(color.color.value)}
-                >
-                  {color.color.value}
-                </div>
+                <div className="palette__info">{color.color.value} </div>
               </ColorCard>
             );
           })}

@@ -6,7 +6,11 @@
   &__title {
     @include section-header-desktop-font;
     color: $dark-brown !important;
-    margin-left: 2rem;
+    margin-left: 4rem;
+  }
+
+  &__links {
+    margin-right: 4rem !important;
   }
 
   &__item-link {

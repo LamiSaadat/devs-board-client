@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CopiedAlert from "../CopiedAlert/CopiedAlert";
 
 function BoardColorPalette({ boardColorPalette, onTileClick }) {
   const ColorCard = styled.div`
