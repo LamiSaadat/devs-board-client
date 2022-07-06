@@ -8,6 +8,7 @@ import Images from "../Images/Images";
 function BoardCreator({ onTileClick }) {
   const location = useLocation();
   const history = useHistory();
+  const API_key = process.env.REACT_APP_API_KEY;
 
   const { boardName, keyword } = location.state;
   const [colorPalette, setColorPalette] = useState([]);
@@ -22,7 +23,6 @@ function BoardCreator({ onTileClick }) {
 
   useEffect(() => {
     const url = `https://api.pexels.com/v1/search?query=${keyword}&per_page=10`;
-    const API_key = "563492ad6f9170000100000157684eda2eba41cc9560cbd8993465b8";
     axios
       .get(url, {
         headers: {
