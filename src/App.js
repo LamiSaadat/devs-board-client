@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import BoardPage from "./pages/BoardPage";
+import SignUpPage from "./pages/SignUpPage";
 
 //Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,7 +19,8 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact component={HomePage}></Route>
+          <Route path="/signup" component={SignUpPage}></Route>
+          <Route path="/home" exact component={HomePage}></Route>
           <Route path="/board" component={BoardPage}></Route>
         </Switch>
       </Router>

@@ -6,7 +6,7 @@ function Header() {
     //bootstrap header
     <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom header">
       <a
-        href="/"
+        href="/home"
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
       >
         <span className="fs-4 header__title">Dev's Board</span>
@@ -15,7 +15,7 @@ function Header() {
       <ul className="nav nav-pills header__links">
         <li className="nav-item header__link header__item">
           <NavLink
-            to="/"
+            to="/home"
             exact
             className="nav-link header__item-link"
             activeClassName="active"
