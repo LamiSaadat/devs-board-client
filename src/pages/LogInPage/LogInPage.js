@@ -1,37 +1,33 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import "./SignUpPage.scss";
 
-function SignUpPage() {
-  const history = useHistory();
-  const [isSignedUp, setIsSignedUp] = useState(false);
-
+function LogInPage() {
   const base_URL = process.env.REACT_APP_API_URL;
+  const history = useHistory();
 
-  const handleSignUp = (e) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogIn = (e) => {
     e.preventDefault();
 
     axios
-      .post(`${base_URL}/signup`, {
-        name: e.target.name.value,
+      .post(`${base_URL}/login`, {
         username: e.target.username.value,
         password: e.target.password.value,
       })
-      .then(() => {
-        setIsSignedUp(true);
-        history.push("/login");
+      .then(({ data }) => {
+        sessionStorage.authToken = data.token;
+        setIsLoggedIn(true);
+        history.push("/home");
+      })
+      .catch((err) => {
+        console.log(`Log in failed: ${err}`);
       });
   };
 
   return (
-    <form onSubmit={handleSignUp}>
-      <div>
-        <label>
-          Name
-          <input type="text" placeholder="Name" name="name" />
-        </label>
-      </div>
+    <form onSubmit={handleLogIn}>
       <div>
         <label>
           Username
@@ -44,9 +40,9 @@ function SignUpPage() {
           <input type="password" placeholder="Password" name="password" />
         </label>
       </div>
-      <button>Sign Up</button>
+      <button>Log In</button>
     </form>
   );
 }
 
-export default SignUpPage;
+export default LogInPage;
