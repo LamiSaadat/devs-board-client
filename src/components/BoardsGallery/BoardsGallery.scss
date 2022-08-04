@@ -7,16 +7,32 @@
 
 .board-gallery {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1170px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 5rem;
+
+  @include tablet {
+    width: 832px;
+    justify-content: flex-start;
+  }
+
+  @include desktop {
+    width: 1170px;
+    justify-content: flex-start;
+  }
 
   &__title {
     @include page-header-desktop-font;
     color: $dark-brown;
-    margin: 0 0 2rem 15rem;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      justify-content: flex-start;
+      margin-left: 2rem;
+    }
   }
 }
 
