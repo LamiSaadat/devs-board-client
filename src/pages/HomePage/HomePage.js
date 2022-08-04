@@ -10,8 +10,8 @@ import "./HomePage.scss";
 function HomePage() {
   const base_URL = process.env.REACT_APP_API_URL;
   const history = useHistory();
-  const [isSignedUp, setIsSignedUp] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isSignedUp, setIsSignedUp] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ function HomePage() {
         password: e.target.password.value,
       })
       .then(() => {
-        setIsSignedUp(true);
+        // setIsSignedUp(true);
         history.push("/login");
       });
   };
@@ -38,7 +38,7 @@ function HomePage() {
       })
       .then(({ data }) => {
         sessionStorage.authToken = data.token;
-        setIsLoggedIn(true);
+        // setIsLoggedIn(true);
         history.push("/home");
       })
       .catch((err) => {
