@@ -59,37 +59,34 @@ function Board({ boards }) {
   };
 
   return (
-    <>
-      <section className="selected-board">
-        <h1 className="selected-board__title">{singleBoard.name}</h1>
+    <section className="create-form-container">
+      <div className="create-form">
+        <h1 className="create-form__title">{singleBoard.name}</h1>
 
         {boardColorPalette && (
           <BoardColorPalette boardColorPalette={boardColorPalette} />
         )}
         {boardImages && <BoardImages boardImages={boardImages} />}
 
-        <div className="selected-board__btn-container">
+        <div className="create-form__btn-container">
           <Link
             to="/board/gallery"
-            className="selected-board__btn selected-board__btn--close"
+            className="create-form__btn create-form__btn--cancel"
           >
             Close
           </Link>
-          <Button
-            onClick={onOpen}
-            className="selected-board__btn selected-board__btn--delete"
-          >
+          <Button onClick={onOpen} className="create-form__btn">
             Delete
           </Button>
         </div>
-      </section>
+      </div>
 
       <DeleteModal
         handleDeleteClick={handleDeleteClick}
         isOpen={isOpen}
         onClose={onClose}
       />
-    </>
+    </section>
   );
 }
 

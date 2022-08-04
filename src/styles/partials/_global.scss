@@ -1,0 +1,65 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid #dee2e6;
+  border-radius: 0.3rem;
+  height: 80vh;
+  width: 90%;
+  font-family: "Fira Sans";
+  background-color: #f7f8f9;
+  padding: 0.8rem;
+  margin: 0 auto;
+
+  &__title {
+    @include subheader-desktop-font;
+    color: $dark-brown;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include tablet {
+      @include section-header-desktop-font;
+      text-align: start;
+      padding-left: 2rem;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__btn {
+    background-color: $misty-rose !important;
+    color: $dark-brown;
+    border-radius: 10rem !important;
+    border: none;
+    width: 6rem;
+    @include labels-button-desktop-font;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
+
+    &--cancel {
+      text-align: center;
+      text-decoration: none;
+      background-color: $white !important;
+      border: 1px solid $misty-rose;
+      margin-right: 1rem;
+
+      &:hover {
+        color: $dark-brown;
+      }
+    }
+  }
+}
