@@ -1,18 +1,31 @@
-@use "../../styles/partials/variables";
-@use "../../styles/partials/mixins";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .palette {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 1rem 0;
 
   &__swatch {
+    width: 4rem !important;
+    height: 4rem !important;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 0.2rem;
+    margin: 0.2rem 0.2rem;
+
+    @include tablet {
+      width: 6rem !important;
+      height: 6rem !important;
+    }
+
+    @include desktop {
+      width: 8rem !important;
+      height: 8rem !important;
+    }
   }
 
   &__swatch:hover {
