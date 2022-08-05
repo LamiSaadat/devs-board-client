@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import "./BoardPage.scss";
-import Board from "../../components/Board";
+import Board from "../../components/Board/Board";
 import BoardCreator from "../../components/BoardCreator";
 import BoardsGallery from "../../components/BoardsGallery";
 
