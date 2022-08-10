@@ -16,11 +16,16 @@ function Images({ images }) {
       >
         {images.map((image) => {
           return (
-            <a href={image.src.landscape} target="_blank" key={image.id}>
+            <a
+              href={image.src.landscape}
+              target="_blank"
+              rel="noreferrer"
+              key={image.id}
+            >
               <img
                 className="images__image"
                 src={image.src.landscape}
-                alt={`Photo by ${image.photographer} on Pexels.`}
+                alt={`By ${image.photographer} on Pexels.`}
               />
             </a>
           );

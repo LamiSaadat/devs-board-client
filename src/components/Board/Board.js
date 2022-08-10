@@ -35,7 +35,7 @@ function Board({ boards }) {
       .catch((err) => {
         console.log(err);
       });
-  }, [id]);
+  });
 
   //get images from existing board
   useEffect(() => {
@@ -47,7 +47,7 @@ function Board({ boards }) {
       .catch((err) => {
         console.log(err);
       });
-  }, [id]);
+  });
 
   //axios call to delete board
   const deleteBoard = async () => {
