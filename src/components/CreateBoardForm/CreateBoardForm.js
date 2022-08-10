@@ -17,7 +17,7 @@ function CreateBoardForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/board/create", { boardName, keyword });
+    history.push("/create", { boardName, keyword });
   };
 
   return (

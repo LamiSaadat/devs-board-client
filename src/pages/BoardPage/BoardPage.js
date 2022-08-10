@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import "./BoardPage.scss";
 import Board from "../../components/Board/Board";
-import BoardCreator from "../../components/BoardCreator";
+// import BoardCreator from "../../components/BoardCreator";
 import BoardsGallery from "../../components/BoardsGallery";
 
 function BoardPage() {
@@ -25,7 +25,7 @@ function BoardPage() {
   return (
     <Router>
       <Switch>
-        <Route path="/board/create" component={BoardCreator}></Route>
+        {/* <Route path="/board/create" component={BoardCreator}></Route> */}
         <Route
           path="/board/gallery"
           render={(routerProps) => {
