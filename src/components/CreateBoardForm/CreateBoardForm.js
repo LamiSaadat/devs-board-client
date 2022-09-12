@@ -15,7 +15,7 @@ function CreateBoardForm() {
     axios.get(`${base_URL}/keywords`).then((response) => {
       setKeywordList(response.data);
     });
-  }, []);
+  }, [base_URL]);
 
   const handleBoardNameChange = (e) => {
     setBoardName(e.target.value);
