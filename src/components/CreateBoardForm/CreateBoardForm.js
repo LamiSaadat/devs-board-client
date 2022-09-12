@@ -54,6 +54,7 @@ function CreateBoardForm() {
             className="form-control form__input"
             id="floatingPassword"
             name="keyword"
+            value={keyword}
             onChange={handleKeywordChange}
           >
             <option key="" value="">
