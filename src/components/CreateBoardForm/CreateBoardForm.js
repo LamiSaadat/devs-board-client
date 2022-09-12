@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 import "./CreateBoardForm.scss";
 
 function CreateBoardForm() {
   const [boardName, setBoardName] = useState("");
   const [keyword, setKeyword] = useState("");
+  const [keywordList, setKeywordList] = useState([]);
+  const base_URL = process.env.REACT_APP_API_URL;
   const history = useHistory();
+
+  useEffect(() => {
+    axios.get(`${base_URL}/keywords`).then((response) => {
+      setKeywordList(response.data);
+      console.log(keywordList);
+    });
+  });
 
   const handleBoardNameChange = (e) => {
     setBoardName(e.target.value);
