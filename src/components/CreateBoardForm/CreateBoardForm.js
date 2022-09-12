@@ -27,6 +27,7 @@ function CreateBoardForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     history.push("/create", { boardName, keyword });
   };
 
@@ -46,6 +47,7 @@ function CreateBoardForm() {
             value={boardName}
             onChange={handleBoardNameChange}
             placeholder="Enter board name..."
+            required
           />
           <label htmlFor="floatingInput">Board Name</label>
         </div>
@@ -56,6 +58,7 @@ function CreateBoardForm() {
             name="keyword"
             value={keyword}
             onChange={handleKeywordChange}
+            required
           >
             <option key="" value="">
               Please select
@@ -70,7 +73,6 @@ function CreateBoardForm() {
           </select>
           <label htmlFor="floatingPassword">Keyword</label>
         </div>
-
         <button
           className="w-100 btn btn-lg btn-primary form__btn"
           type="submit"
