@@ -13,9 +13,8 @@ function CreateBoardForm() {
   useEffect(() => {
     axios.get(`${base_URL}/keywords`).then((response) => {
       setKeywordList(response.data);
-      console.log(keywordList);
     });
-  });
+  }, []);
 
   const handleBoardNameChange = (e) => {
     setBoardName(e.target.value);
@@ -50,15 +49,19 @@ function CreateBoardForm() {
           <label htmlFor="floatingInput">Board Name</label>
         </div>
         <div className="form-floating mb-3 form__input-container">
-          <input
-            type="text"
+          <select
             className="form-control form__input"
             id="floatingPassword"
             name="keyword"
-            value={keyword}
             onChange={handleKeywordChange}
-            placeholder="Enter keyword..."
-          />
+          >
+            <option key="" value="">
+              Please select
+            </option>
+            {keywordList.map((keyword) => {
+              return <option value={keyword}>{keyword}</option>;
+            })}
+          </select>
           <label htmlFor="floatingPassword">Keyword</label>
         </div>
 
