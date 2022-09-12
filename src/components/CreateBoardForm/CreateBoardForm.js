@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import "./CreateBoardForm.scss";
 
 function CreateBoardForm() {
@@ -59,7 +60,11 @@ function CreateBoardForm() {
               Please select
             </option>
             {keywordList.map((keyword) => {
-              return <option value={keyword}>{keyword}</option>;
+              return (
+                <option key={uuidv4()} value={keyword}>
+                  {keyword}
+                </option>
+              );
             })}
           </select>
           <label htmlFor="floatingPassword">Keyword</label>
