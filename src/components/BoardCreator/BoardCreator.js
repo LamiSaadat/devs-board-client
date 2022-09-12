@@ -20,7 +20,7 @@ function BoardCreator() {
     axios.get(`${base_URL}/palettes/${keyword}`).then((response) => {
       setColorPalette(response.data);
     });
-  }, []);
+  });
 
   //get images by keyword
   useEffect(() => {
@@ -37,7 +37,7 @@ function BoardCreator() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
