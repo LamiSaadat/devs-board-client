@@ -3,6 +3,12 @@
 
 This is my capstone project for BrainStation's full-stack bootcamp. The task was to ideate, plan, and execute a full-stack application within two weeks. Dev's Board was made using React, React Router, and SASS for the front end, a Node/Express backend API, and Knex to query a MySQL database. 
 
+Dev's Board is a mood board creator where users can select a keyword from a list that describes their project and the program will display a color palette and set of pictures for insipiration. If they're happy with the board, users can save them. They can also retrieve and delete them as needed.
+
+## Project Screenshot
+
+<img width="954" alt="Screen Shot 2023-04-23 at 3 15 49 PM" src="https://user-images.githubusercontent.com/69886705/233860284-0db5276c-380f-4820-a603-514bfb4b1175.png">
+
 ## :running: Run Locally
 
 Follow these steps to run a local instance of Dev's Board. You will also need to install the [backend](https://github.com/LamiSaadat/devs-board-server):  
@@ -56,11 +62,6 @@ REACT_APP_API_URL=http://localhost:<PORT SET IN /devs-board-server/.env>
 * [ ] Update board
 * [ ] Add notes
 * [ ] Share boards
-
-<!-- Contact -->
-## :handshake: Contact
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lamisaadat/)
 
 <!-- Acknowledgments -->
 ## :gem: Acknowledgements
